@@ -61,19 +61,13 @@ The model watches a 60-frame window of body and hand landmarks and classifies it
 
 ```
 gestura/
-├── app.py                      # Entry point
-├── core/
-│   ├── inference_assets.py     # Model architecture + MediaPipe helpers
-│   ├── smoother.py             # Temporal prediction smoother
-│   └── startup_checks.py       # Pre-launch validation (camera, model file)
-├── threads/
-│   ├── capture_thread.py       # Dedicated webcam capture (30 FPS)
-│   ├── inference_thread.py     # MediaPipe + model inference
-│   └── virtual_cam_thread.py   # Non-blocking virtual camera output
-└── ui/
-    └── main_window.py          # PyQt6 desktop UI
+├── ASL.py                      # MediaPipe helpers, model architecture, data collection
+├── main_GUI.py                 # PyQt6 desktop UI and inference pipeline
+├── model_training.py           # Model training script
+├── model2.keras                # Trained model weights
+├── requirements.txt            # Python dependencies
+└── README.md
 ```
-
 ---
 
 ## Installation
@@ -87,7 +81,7 @@ pip install -r requirements.txt
 Place your trained `model2.keras` weights file in the root `gestura/` directory, then run:
 
 ```bash
-python app.py
+python main_GUI.py
 ```
 
 **Requirements:** `opencv-python`, `mediapipe`, `tensorflow`, `PyQt6`, `numpy`, `pyvirtualcam`
@@ -152,9 +146,9 @@ Raw model output like `"hello yes stop"` will be passed through a language corre
 
 | Phase | Focus | Status |
 |---|---|---|
-| Phase 1 | Stable multi-threaded desktop app | 🔄 In Progress |
-| Phase 2 | PyTorch model + CTC training pipeline | 📋 Planned |
-| Phase 3 | Language model correction layer | 📋 Planned |
+| Phase 1 | Stable multi-threaded desktop app | Completed |
+| Phase 2 | PyTorch model + CTC training pipeline | 🔄 In Progress |
+| Phase 3 | Language model correction layer | 🔄 In Progress |
 | Phase 4 | Expanded vocabulary + dataset pipeline | 📋 Planned |
 
 ---
