@@ -152,13 +152,3 @@ Raw model output like `"hello yes stop"` will be passed through a language corre
 | Phase 4 | Expanded vocabulary + dataset pipeline | 📋 Planned |
 
 ---
-
-## Contributing
-
-This project is under active development. If you'd like to contribute — especially around dataset collection, model training, or accessibility testing — feel free to open an issue or reach out.
-
----
-
-## License
-
-MIT License — see `LICENSE` for details.
