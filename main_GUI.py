@@ -20,7 +20,7 @@ class SignLanguageApp(QWidget):
         self.setGeometry(100, 100, 1280, 720)
         self.dark_mode = True
 
-        self.camera_index = 1
+        self.camera_index = 0
         self.capture = None
         self.timer = QTimer()
         self.subtitle_size = 24
